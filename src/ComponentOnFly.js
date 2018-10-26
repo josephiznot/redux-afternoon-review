@@ -12,26 +12,34 @@ class ComponentOnFly extends Component {
       id: ""
     };
   }
+
   handleUsername = val => {
     this.setState({ username: val });
   };
+
   handleId(val) {
     this.setState({ id: val });
   }
+
   handlePassword(val) {
     this.setState({ password: val });
   }
+
   sendToReducer() {
     let { updateId, updatePassword, updateUsername } = this.props;
+    
     updateId(this.state.id);
     updatePassword(this.state.password);
     updateUsername(this.state.username);
   }
+
   clearFields() {
     this.setState({ username: "", password: "", id: "" });
   }
+
   render() {
     console.log(this.state);
+
     return (
       <div className="App">
         <DisplayInfo />
@@ -57,7 +65,9 @@ class ComponentOnFly extends Component {
     );
   }
 }
-const mapStateToProps = state => state;
+
+const mapStateToProps = state => ({ ...state });
+
 export default connect(
   mapStateToProps,
   { updateUsername, updatePassword, updateId }
