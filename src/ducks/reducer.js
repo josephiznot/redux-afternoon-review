@@ -3,7 +3,8 @@ const initialState = {
   password: "",
   id: 0
 };
-//constants
+
+// CONSTANTS || ACTION TYPES
 const UPDATE_USERNAME = "UPDATE_USERNAME";
 const UPDATE_PASSWORD = "UPDATE_PASSWORD";
 const UPDATE_ID = "UPDATE_ID";
